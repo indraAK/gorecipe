@@ -32,7 +32,7 @@ Aplikasi web serderhana untuk mencari resep masakan khas indonesia yang dibuat m
 
 ## Demo
 
-(Gorecipe)(https://sleepy-sammet-890358.netlify.app/)
+[Gorecipe](https://sleepy-sammet-890358.netlify.app/)
 
 ### Thanks to
 
