@@ -30,6 +30,10 @@ Aplikasi web serderhana untuk mencari resep masakan khas indonesia yang dibuat m
 - ReactJS
 - React Router
 
+## Demo
+
+(Gorecipe)(https://sleepy-sammet-890358.netlify.app/)
+
 ### Thanks to
 
 Terima kasih untuk [farizdotid](https://github.com/farizdotid) & [tomorisakura](https://github.com/tomorisakura) telah menyediakan API Resep masakan indonesia
