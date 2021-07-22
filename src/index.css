@@ -1,0 +1,520 @@
+:root {
+  --bg-color: hsl(0, 0%, 98%);
+  --primary-color: hsl(138, 56%, 44%);
+  --secondary-color: hsl(138, 48%, 54%);
+  --white: hsl(0, 0%, 100%);
+  --body-text: hsl(210, 6%, 34%);
+  --title-color: hsl(210, 8%, 16%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--body-text);
+  min-height: 100vh;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 0;
+}
+
+img {
+  display: block;
+  line-height: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1rem 1.2rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 3px;
+  font-size: 1.5rem;
+}
+
+.btn-primary {
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 1rem 1.5rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.heading-2 {
+  line-height: 1.3;
+}
+
+.amount {
+  color: #fbaf18;
+  font-size: 1.7rem;
+}
+
+/* NAVBAR */
+header {
+  background-color: var(--white);
+  min-height: 8rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  color: hsl(210, 8%, 16%);
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
+.brand-img {
+  width: 4.2rem;
+  margin-right: 8px;
+}
+
+.navbar .nav-list {
+  display: flex;
+  align-items: baseline;
+}
+
+.navbar .nav-item {
+  margin-left: 4rem;
+}
+
+.navbar .nav-item-group {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--body-text);
+}
+
+.nav-link.selected {
+  color: var(--primary-color);
+}
+
+.navbar .favorite-counter {
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 600;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+}
+
+/* HOMEPAGE - HERO */
+.hero {
+  text-align: center;
+  padding: 5rem 0;
+  background-color: var(--white);
+  min-height: calc(100vh - 8rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  background-image: url(./images/bg-hero.svg);
+  background-size: 40rem;
+  background-position: center;
+}
+
+.hero h1 {
+  line-height: 1.3;
+  font-size: clamp(2.5rem, 5vw, 3.2rem);
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+/* HOMEPAGE - SEARCHBAR */
+form {
+  max-width: 50rem;
+  margin: 5rem auto 0;
+}
+
+.input-group {
+  position: relative;
+  min-height: 5rem;
+  border-radius: 5rem;
+}
+
+.input-group input {
+  display: block;
+  background-color: hsl(0, 0%, 100%);
+  color: var(--body-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 5rem;
+  border: 1px solid hsl(216, 5%, 90%);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.06);
+  border-radius: inherit;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: hsl(138, 48%, 54%);
+  box-shadow: 0 0 0 2px hsl(138, 48%, 90%);
+}
+
+.input-group input::placeholder {
+  color: hsl(0, 0%, 55%);
+}
+
+.input-group .search-icon {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: hsl(210, 4%, 64%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.btn-search {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  position: absolute;
+  top: 5px;
+  right: 7px;
+}
+
+.btn-search:hover {
+  background-color: var(--primary-color);
+}
+
+/* HOMEPAGE - RECIEPS */
+.recipes {
+  padding: 7rem 0 0;
+}
+
+.recipe-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem 2rem;
+  margin-top: 2.5rem;
+}
+
+.recipe-card {
+  background-color: var(--white);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 27rem;
+  object-fit: cover;
+}
+
+.recipe-card .recipe-body {
+  padding: 2rem;
+}
+
+.recipe-card .recipe-title {
+  color: var(--title-color);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.recipe-card .recipe-link:hover {
+  color: var(--primary-color);
+}
+
+.recipe-info {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 3rem;
+}
+
+.recipe-info .icon-group {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.recipe-info .icon {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+.recipe-info p {
+  font-size: 1.2rem;
+  line-height: 1;
+  margin-left: 5px;
+}
+
+/* DETAIL */
+.detail {
+  margin-top: 3.5rem;
+}
+
+.recipe-detail {
+  max-width: 75rem;
+}
+
+.recipe-detail .recipe-body {
+  padding: 2rem 2rem 3rem;
+}
+
+.recipe-detail .recipe-title {
+  font-size: 2.2rem;
+}
+
+.recipe-by {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: hsl(0, 0%, 55%);
+}
+
+.recipe-detail .recipe-info {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+.recipe-detail .ingredients,
+.recipe-detail .steps {
+  margin-top: 3rem;
+}
+
+.recipe-detail .heading-4 {
+  font-size: 1.8rem;
+}
+
+.list-group li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.list-group .icon {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.list-group-border li {
+  padding: 1.2rem 0;
+}
+
+.list-group-border li:not(:last-child) {
+  border-bottom: 1px solid hsl(216, 5%, 90%);
+}
+
+/* BOOKMARKS */
+.bookmarks {
+  margin-top: 3rem;
+}
+
+.bookmarks .illustration {
+  width: 20rem;
+  margin: 5rem auto 0;
+}
+
+/* NOT FOUND */
+.not-found {
+  min-height: calc(100vh - 8rem);
+  padding: 3rem 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found .illustration {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.not-found h4 {
+  font-size: 2.5rem;
+  margin: 4rem 0 3rem;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+  border-top: 1px solid hsl(0, 0%, 93%);
+  padding: 4rem 2rem 2.5rem;
+  text-align: center;
+  margin-top: 15rem;
+}
+
+.scm-list {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 3rem;
+}
+
+.scm-list li {
+  margin: 0 1rem;
+}
+
+.scm-icon {
+  display: inline-block;
+  font-size: 2.2rem;
+  color: hsl(210, 4%, 64%);
+}
+
+.copyright-text {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+
+/* MOUSE SCROLL ANIM */
+.mouse-scroll-anim {
+  width: 3rem;
+  height: 5rem;
+  border-radius: 2.5rem;
+  border: 1px solid hsl(0, 0%, 55%);
+  margin: 5rem auto 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.mouse-scroll-anim::after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 1rem;
+  border-radius: 3rem;
+  background-color: hsl(0, 0%, 55%);
+  position: absolute;
+  top: 5px;
+  left: calc(50% - 2.5px);
+  animation: scroll 1.8s ease-in infinite;
+}
+
+@keyframes scroll {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    width: 97vw;
+  }
+
+  .recipe-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .recipe-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .recipe-detail img {
+    height: 38rem;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .recipe-card .recipe-title {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .brand {
+    font-size: 1.8rem;
+  }
+
+  .brand-img {
+    width: 3.2rem;
+  }
+
+  .navbar .nav-item {
+    margin-left: 2.5rem;
+  }
+
+  header .nav-link {
+    font-size: 1.5rem;
+  }
+
+  header {
+    min-height: 7.3rem;
+  }
+
+  .bookmarks .illustration {
+    width: 15rem;
+  }
+}
