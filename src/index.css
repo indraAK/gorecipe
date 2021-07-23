@@ -485,6 +485,16 @@ footer {
   }
 }
 
+@media screen and (min-width: 414px) {
+  .recipe-card .recipe-title {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}
+
 @media screen and (max-width: 414px) {
   .recipe-card .recipe-title {
     font-size: 1.8rem;
