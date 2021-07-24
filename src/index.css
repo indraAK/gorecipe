@@ -14,6 +14,7 @@
   margin: 0;
   padding: 0;
   font-family: "Nunito", sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 html {
@@ -256,6 +257,7 @@ form {
 }
 
 .recipe-card {
+  height: 100%;
   background-color: var(--white);
   border-radius: 5px;
   overflow: hidden;
@@ -428,6 +430,7 @@ footer {
 
 /* MOUSE SCROLL ANIM */
 .mouse-scroll-anim {
+  cursor: pointer;
   width: 3rem;
   height: 5rem;
   border-radius: 2.5rem;
@@ -527,4 +530,8 @@ footer {
   .bookmarks .illustration {
     width: 15rem;
   }
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
 }

@@ -15,6 +15,7 @@ const RecipeCard = ({ recipe }) => {
           <Link
             to={`/recipe/${recipe.key}`}
             className="recipe-title recipe-link"
+            title={recipe.title}
           >
             {recipe.title}
           </Link>
